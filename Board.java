@@ -8,22 +8,27 @@ public class Board{
 	    frame.setTitle("Draughts");
 	    frame.setSize(800, 800);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(8,8));
-        panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        panel.setLayout(null);
+        frame.add(panel);
         int type=0;
-        JButton[][] button = new JButton[8][8];
-        button[1][1] = new JButton("Hi");
-        panel.add(button[1][1]);
-        
-        /*for (int o = 7; o > -1; o--) {
-            for (int i = 0; i < 8; i++) {
-                button[i][o].setSize(100,100);
+        int r=0;
+        int c=0;
+        JButton[][] button = new JButton[8][8];    
+        for(int o=0; o < 8; o++){
+            for(int i=0; i < 8; i++){
                 button[i][o] = new JButton("Hi");
+                button[i][o].setSize(100,100);
+                button[i][o].setLocation(r,c);
                 panel.add(button[i][o]);
+                r=r+100;
+                
             }
-        }*/
-    frame.add(panel);
+            r=0;
+            c=c+100; 
+        }
+
 
 
     }
